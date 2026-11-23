@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use FATE, please cite this software. The manuscript citation will be added upon publication."
+title: "FATE: Frequency-Anchored Textual Evidence Learning for AI-Generated Image Detection"
+type: software
+authors:
+  - family-names: Zheng
+    given-names: Mingheng
+  - family-names: Chi
+    given-names: Kaichen
+  - family-names: Wang
+    given-names: Qi
+repository-code: "https://github.com/Mingheng-Zheng/FATE"
+license: MIT
+version: 0.1.0
+date-released: 2026-11-23
