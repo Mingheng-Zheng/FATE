@@ -23,7 +23,9 @@ def main():
                 target=(root/member.name).resolve()
                 if not member.isfile() or not target.is_relative_to(root):raise ValueError('Unsafe tar entry')
                 if target.exists():
-                    if target.is_file() and target.stat().st_size==member.size:continue
+                    if target.is_file() and target.stat().st_size==member.size:
+                        with target.open('rb') as old,tar.extractfile(member) as src:
+                            if hashlib.file_digest(old,'sha256').digest()==hashlib.file_digest(src,'sha256').digest():continue
                     raise FileExistsError(target)
                 target.parent.mkdir(parents=True,exist_ok=True)
                 with tar.extractfile(member) as src,target.open('xb') as dst:shutil.copyfileobj(src,dst)
