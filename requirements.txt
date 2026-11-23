@@ -7,4 +7,5 @@ numpy
 tqdm
 pytorch_wavelets
 PyWavelets
+setuptools<81
 huggingface_hub
